@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: blanchedalmond;
+            background-image: url("gif.gif");
+            background-repeat: no-repeat;  
+            background-size: cover;        
+            background-position: center;  
+        }
+
+        #password-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #creo-content {
+            display: none;
+        }
+
+        img {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="password-form">
+        <img src="reo.jpg" alt="Creo Logo">
+        <input type="password" id="password" placeholder="Enter password" required>
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div id="creo-content">
+        <button onclick="window.location.href='sand.html';">Play Creo</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "creo") {
+                document.getElementById("password-form").style.display = "none";
+                document.getElementById("creo-content").style.display = "block";
+            } else {
+                alert("Incorrect password! Try again.");
+            }
+        }
+    </script>
+
+</body>
+</html>
